@@ -10,4 +10,6 @@
 
 
 backend -> https://smartspend-backend-om69.onrender.com/
-frontend -> https://claude-project-finance-tracker-e8mk2xyn5.vercel.app/
+frontend -> claude-project-finance-tracker.vercel.app
+            claude-project-finance-git-5bfc1c-fenilmevada69-1408s-projects.vercel.app
+            claude-project-finance-tracker-hyxfdmo4s.vercel.app
