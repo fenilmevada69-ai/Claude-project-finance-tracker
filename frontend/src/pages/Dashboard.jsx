@@ -5,6 +5,9 @@ import { getTransactions, getSummary } from '../api/axios';
 import SummaryCards from '../components/SummaryCards';
 import AddTransaction from '../components/AddTransaction';
 import TransactionList from '../components/TransactionList';
+import CategoryPieChart from '../components/CategoryPieChart';
+import WeeklyBarChart from '../components/WeeklyBarChart';
+import BudgetGoals from '../components/BudgetGoals';
 
 const Dashboard = () => {
     const { user, logout } = useAuth();
@@ -59,15 +62,29 @@ const Dashboard = () => {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-3xl mx-auto px-4 py-8">
+            <div className="max-w-4xl mx-auto px-4 py-8">
                 {loading ? (
                     <div className="text-center text-gray-400 py-20 text-lg">
                         Loading your data...
                     </div>
                 ) : (
                     <>
+                        {/* Summary Cards */}
                         <SummaryCards summary={summary} />
+
+                        {/* Charts Row */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <CategoryPieChart transactions={transactions} />
+                            <WeeklyBarChart transactions={transactions} />
+                        </div>
+
+                        {/* Budget Goals */}
+                        <BudgetGoals />
+
+                        {/* Add Transaction */}
                         <AddTransaction onTransactionAdded={fetchData} />
+
+                        {/* Transaction List */}
                         <TransactionList
                             transactions={transactions}
                             onTransactionDeleted={fetchData}
