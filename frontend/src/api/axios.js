@@ -4,7 +4,6 @@ const API = axios.create({
     baseURL: 'http://localhost:5000/api',
 });
 
-// Automatically attach token to every request
 API.interceptors.request.use((req) => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user?.token) {
@@ -14,3 +13,9 @@ API.interceptors.request.use((req) => {
 });
 
 export default API;
+
+// ── Transaction API functions ──────────────────────────────
+export const createTransaction = (data) => API.post('/transactions', data);
+export const getTransactions = () => API.get('/transactions');
+export const deleteTransaction = (id) => API.delete(`/transactions/${id}`);
+export const getSummary = () => API.get('/transactions/summary');
