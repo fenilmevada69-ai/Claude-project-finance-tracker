@@ -5,3 +5,9 @@
 ✅ Pie Chart               (Spending by category)
 ✅ Bar Chart               (Last 7 days)
 ✅ Budget Goals            (Set limits + progress bars)
+
+
+
+
+backend -> https://smartspend-backend-om69.onrender.com/
+frontend -> 

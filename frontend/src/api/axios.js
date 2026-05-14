@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
 });
 
 API.interceptors.request.use((req) => {
@@ -14,7 +14,6 @@ API.interceptors.request.use((req) => {
 
 export default API;
 
-// ── Transaction API functions ──────────────────────────────
 export const createTransaction = (data) => API.post('/transactions', data);
 export const getTransactions = () => API.get('/transactions');
 export const deleteTransaction = (id) => API.delete(`/transactions/${id}`);
