@@ -8,6 +8,7 @@ import TransactionList from '../components/TransactionList';
 import CategoryPieChart from '../components/CategoryPieChart';
 import WeeklyBarChart from '../components/WeeklyBarChart';
 import BudgetGoals from '../components/BudgetGoals';
+import AIInsights from '../components/AIInsights';
 
 const Dashboard = () => {
     const { user, logout } = useAuth();
@@ -80,6 +81,9 @@ const Dashboard = () => {
 
                         {/* Budget Goals */}
                         <BudgetGoals />
+
+                        {/* AI Insights */}
+                        <AIInsights />
 
                         {/* Add Transaction */}
                         <AddTransaction onTransactionAdded={fetchData} />
